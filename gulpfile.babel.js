@@ -32,12 +32,7 @@ const taskScript = () => {
     
     let s = gulp.src(src)
                 .pipe(babel())
-                .pipe(uglify({
-                    compress: {
-                        drop_console: true,  // 过滤 console
-                        drop_debugger: true,  // 过滤 debugger
-                    },
-                }))
+                .pipe(uglify())
                 .pipe(gulp.dest(build))
     return s
 }
