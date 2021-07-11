@@ -1,0 +1,36 @@
+{
+  "name": "show-docs",
+  "version": "1.0.0",
+  "description": "个人项目展示",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facingbattle/show-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facingbattle/show-docs/issues"
+  },
+  "homepage": "https://github.com/facingbattle/show-docs#readme",
+  "dependencies": {
+    "@babel/core": "7.12.10",
+    "@babel/preset-env": "7.12.11",
+    "@babel/register": "7.12.10",
+    "gulp": "4.0.2",
+    "gulp-babel": "8.0.0",
+    "gulp-clean-css": "4.3.0",
+    "gulp-concat": "2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "4.1.0",
+    "gulp-sourcemaps": "3.0.0",
+    "gulp-uglify": "3.0.2"
+  }
+}
