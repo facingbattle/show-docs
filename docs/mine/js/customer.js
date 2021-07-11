@@ -1,1 +1,0 @@
-"use strict";var emitNotice=function(s){var l=e(".mask"),t=e('[data-notice="fail"]'),a=e('[data-notice="success"]');s?(l.style.display="block",a.style.display="flex"):(l.style.display="block",t.style.display="flex")};
