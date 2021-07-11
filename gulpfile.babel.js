@@ -32,7 +32,12 @@ const taskScript = () => {
     
     let s = gulp.src(src)
                 .pipe(babel())
-                .pipe(uglify())
+                .pipe(uglify({
+                    compress: {
+                        drop_console: true,  // 过滤 console
+                        drop_debugger: true,  // 过滤 debugger
+                    },
+                }))
                 .pipe(gulp.dest(build))
     return s
 }
@@ -74,5 +79,5 @@ const taskImage = () => {
     return s
 }
 
-const taskArr = [taskStyle, taskScript, taskScriptMin, taskHtml, taskImage,]
+const taskArr = [taskStyle, taskScript, taskScriptMin, taskHtml, taskImage]
 exports.default = series(...taskArr)
