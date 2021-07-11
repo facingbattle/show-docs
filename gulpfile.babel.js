@@ -26,12 +26,24 @@ const taskStyle = () => {
 const taskScript = () => {
     let src = [
         'demo/**/*.js',
+        '!demo/**/*.min.js',
     ]
     let build = 'docs'
     
     let s = gulp.src(src)
                 .pipe(babel())
                 .pipe(uglify())
+                .pipe(gulp.dest(build))
+    return s
+}
+
+const taskScriptMin = () => {
+    let src = [
+        'demo/**/*.min.js',
+    ]
+    let build = 'docs'
+    
+    let s = gulp.src(src)
                 .pipe(gulp.dest(build))
     return s
 }
@@ -46,7 +58,7 @@ const taskHtml = () => {
                     removeComments: true,//清除HTML注释
                     collapseWhitespace: true,//压缩HTML
                     minifyJS: true,//压缩页面JS
-                    minifyCSS: true//压缩页面CSS
+                    minifyCSS: true,//压缩页面CSS
                 }))
                 .pipe(gulp.dest(build))
     return s
@@ -54,7 +66,7 @@ const taskHtml = () => {
 
 const taskImage = () => {
     let src = [
-      'demo/**/*.{jpg,png,gif}'
+        'demo/**/*.{jpg,png,gif}',
     ]
     let build = 'docs'
     let s = gulp.src(src)
@@ -62,5 +74,5 @@ const taskImage = () => {
     return s
 }
 
-
-exports.default = series(taskStyle, taskScript, taskHtml, taskImage)
+const taskArr = [taskStyle, taskScript, taskScriptMin, taskHtml, taskImage,]
+exports.default = series(...taskArr)
