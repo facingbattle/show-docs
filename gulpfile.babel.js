@@ -2,6 +2,7 @@ import gulp from 'gulp'
 import { series } from 'gulp'
 import babel from 'gulp-babel'
 import uglify from 'gulp-uglify'
+const javascriptObfuscator = require('gulp-javascript-obfuscator')
 import htmlmin from 'gulp-htmlmin'
 import sourcemaps from 'gulp-sourcemaps'
 import concat from 'gulp-concat'
@@ -32,7 +33,12 @@ const taskScript = () => {
     
     let s = gulp.src(src)
                 .pipe(babel())
-                .pipe(uglify())
+                // .pipe(uglify({
+                //     // mangle:{
+                //     //     toplevel: true //默认值false。
+                //     // },
+                // }))
+                .pipe(javascriptObfuscator())
                 .pipe(gulp.dest(build))
     return s
 }

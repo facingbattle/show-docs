@@ -28,9 +28,13 @@
     "gulp-babel": "8.0.0",
     "gulp-clean-css": "4.3.0",
     "gulp-concat": "2.6.1",
-    "gulp-htmlmin": "^5.0.1",
+    "gulp-htmlmin": "5.0.1",
+    "gulp-javascript-obfuscator": "^1.1.6",
     "gulp-sass": "4.1.0",
     "gulp-sourcemaps": "3.0.0",
-    "gulp-uglify": "3.0.2"
+    "gulp-uglify": "3.0.2",
+    "webpack": "4.44.2",
+    "webpack-cli": "4.7.0",
+    "webpack-dev-server": "3.11.0"
   }
 }
